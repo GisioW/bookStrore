@@ -1,0 +1,29 @@
+<div class="row m-2">
+  <div class="col-sm-8 offset-sm-2 m2">
+    <h3>Se connecter à votre compte</h3>
+    <form [formGroup]="signInForm" (ngSubmit)="onSignInUser()">
+      <div class="form-group">
+        <label for="email">Adresse Email</label>
+        <input class="form-control"
+               type="text"
+               id="email"
+               name="email"
+               formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input class="form-control"
+               type="password"
+               id="password"
+               name="password"
+               formControlName="password">
+      </div>
+      <button class="btn btn-primary"
+              type="submit"
+              [disabled]="signInForm.invalid">Se connecter</button>
+    </form>
+    <div class="alert alert-danger text-center m-2" *ngIf="errorMessage">
+      <p>{{errorMessage}}</p>
+    </div>
+  </div>
+</div>

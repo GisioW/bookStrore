@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-xl-12">
+    <h3>Vos Livre</h3>
+    <ul class="list-group mb-2">
+      <li class="list-group-item"
+          *ngFor="let book of books; let i = index"
+      >
+        <h4>{{book.titre}}</h4>
+        <p> {{book.auteur}}</p>
+        <button class="btn btn-outline-info m-2" (click)="onViewBook(i)">Détail</button>
+        <button class="btn btn-outline-danger m-2" (click)="onDeleteBook(book)">Supprimer</button>
+      </li>
+    </ul>
+    <button class="btn btn-primary" (click)="onNewBook()">Nouveau Livre</button>
+  </div>
+</div>
